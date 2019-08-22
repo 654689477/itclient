@@ -183,24 +183,26 @@ public class ComputerInfo {
     }
 
     //读取注册码
-    public    static String getLicense()  {
+    public  static String getLicense()  {
         File file = new File("C:\\license.txt");
         FileReader f_reader=null;
         BufferedReader reader=null;
         String str= null;
-        try {
-            f_reader= new FileReader(file);
-            reader = new BufferedReader(f_reader);
-            str = reader.readLine();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            if(reader !=null){
-                try {
-                    f_reader.close();
-                    reader.close();
-                }catch (Exception e){
+        if(file .exists()){
+            try {
+                f_reader= new FileReader(file);
+                reader = new BufferedReader(f_reader);
+                str = reader.readLine();
+            } catch (Exception e) {
+                e.printStackTrace();
+            }finally {
+                if(reader !=null){
+                    try {
+                        f_reader.close();
+                        reader.close();
+                    }catch (Exception e){
 
+                    }
                 }
             }
         }

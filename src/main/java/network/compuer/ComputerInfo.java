@@ -183,7 +183,7 @@ public class ComputerInfo {
     }
 
     //读取注册码
-    private   static String getLicense()  {
+    public    static String getLicense()  {
         File file = new File("C:\\license.txt");
         FileReader f_reader=null;
         BufferedReader reader=null;

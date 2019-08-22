@@ -11,8 +11,12 @@ public class DemoApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(DemoApplication.class, args);
+      String license=  ComputerInfo.getLicense();
         //启动上传电脑信息和注册码，
-        ComputerInfo.uploadComputerInfo();
+        if(license!=null && !license.isEmpty()){
+            ComputerInfo.uploadComputerInfo();
+        }
+
     }
 
 }
